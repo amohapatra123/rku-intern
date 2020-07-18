@@ -13,6 +13,7 @@ router.post("/loan", (req, res) => {
     Caddress,
     amount,
     period,
+    code,
   } = req.body.request;
   const newLoan = new Loan({
     name,
@@ -24,7 +25,9 @@ router.post("/loan", (req, res) => {
     Caddress,
     amount,
     period,
+    code,
   });
   newLoan.save();
+  res.send("Data submitted Successfully");
 });
 module.exports = router;

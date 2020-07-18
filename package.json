@@ -11,9 +11,9 @@
     "build": "cd client && yarn run build",
     "install-client": "cd client && yarn install",
     "heroku-postbuild": "yarn run install-client && yarn run build",
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "client": "cd client && yarn start",
-    "dev": "concurrently -n 'server,client' -c 'red,green'  \"node server.js\" \"yarn run client\""
+    "dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon server.js\" \"yarn run client\""
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -23,6 +23,7 @@
     "express": "^4.17.1",
     "jquery": "^3.5.1",
     "mongoose": "^5.7.9",
+    "nodemon": "^2.0.4",
     "popper.js": "^1.16.1",
     "reactstrap": "^8.5.1"
   }

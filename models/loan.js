@@ -14,6 +14,10 @@ const BorrowerSchema = new Schema({
     type: String,
     required: true,
   },
+  code: {
+    type: Number,
+    required: true,
+  },
   phone: {
     type: Number,
     required: true,
