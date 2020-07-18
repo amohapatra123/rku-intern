@@ -24,6 +24,9 @@ app.use("/api", loan);
 app.get("/api", (req, res) => {
   res.send("Hello");
 });
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 const server = http.createServer(app);
 server.listen(PORT, () => {
   console.log(`server is running on localhost:${PORT}`);
