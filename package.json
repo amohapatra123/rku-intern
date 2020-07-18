@@ -10,9 +10,10 @@
     "build": "cd client && yarn run build",
     "install-client": "cd client && yarn",
     "heroku-postbuild": "yarn run install-client && yarn run build",
-    "start": "cd server && node index.js",
+    "server": "cd server && node index.js",
     "client": "cd client && yarn start",
-    "dev": "concurrently -n 'server,client'  \"yarn run start\" \"yarn run client\""
+    "start": "concurrently -n 'server,client'  \"yarn run server\" \"yarn run client\"",
+    "dev": "concurrently -n 'server,client'  \"yarn run server\" \"yarn run client\""
   },
   "dependencies": {
     "concurrently": "^5.2.0"
