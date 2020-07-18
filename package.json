@@ -1,0 +1,17 @@
+{
+  "name": "rku-intern",
+  "version": "1.0.0",
+  "description": "Assignment for Internship",
+  "main": "index.js",
+  "repository": "https://github.com/amohapatra123/rku-intern.git",
+  "author": "Anshuman Mohapatra <amohapatra2001@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "cd client && yarn run build",
+    "install-client": "cd client && yarn",
+    "heroku-postbuild": "yarn run install-client && yarn run build",
+    "start": "cd server && node index.js",
+    "client": "cd client && yarn start"
+  }
+}
