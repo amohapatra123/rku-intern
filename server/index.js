@@ -25,7 +25,7 @@ app.get("/api", (req, res) => {
 });
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static("../client/build"));
 }
 const server = http.createServer(app);
 server.listen(PORT, () => {
