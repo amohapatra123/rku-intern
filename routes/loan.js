@@ -5,7 +5,7 @@ const Loan = require("../models/loan");
 router.post("/loan", (req, res) => {
   const {
     name,
-    fathername,
+    fatherOrHusband,
     email,
     phone,
     whatsapp,
@@ -17,7 +17,7 @@ router.post("/loan", (req, res) => {
   } = req.body.request;
   const newLoan = new Loan({
     name,
-    fathername,
+    fatherOrHusband,
     email,
     phone,
     whatsapp,

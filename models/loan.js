@@ -6,7 +6,7 @@ const BorrowerSchema = new Schema({
     type: String,
     required: true,
   },
-  fathername: {
+  fatherOrHusband: {
     type: String,
     required: true,
   },

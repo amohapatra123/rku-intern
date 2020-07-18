@@ -9,7 +9,7 @@ const emailRegex = RegExp(
 class Form extends Component {
   state = {
     name: null,
-    fathername: null,
+    fatherOrHusband: null,
     email: null,
     phone: null,
     whatsapp: null,
@@ -25,7 +25,7 @@ class Form extends Component {
   handleclick = () => {
     const {
       name,
-      fathername,
+      fatherOrHusband,
       email,
       phone,
       whatsapp,
@@ -39,7 +39,7 @@ class Form extends Component {
     } = this.state;
     const request = {
       name,
-      fathername,
+      fatherOrHusband,
       email,
       phone,
       whatsapp,
@@ -86,7 +86,7 @@ class Form extends Component {
   render() {
     const {
       name,
-      fathername,
+      fatherOrHusband,
       email,
       phone,
       whatsapp,
@@ -140,7 +140,7 @@ class Form extends Component {
         {count === 3 ? (
           <div class="form-group row mt-5">
             <label for="Phone" className="col-md-2 col-form-label offset-md-2">
-              Phone Number
+              Phone Number <br></br>कृपया अपना मोबाइल नंबर दर्ज करें
             </label>
             <div class="col-md-6">
               <input
@@ -168,7 +168,7 @@ class Form extends Component {
               for="Whatsapp"
               className="col-md-2 col-form-label offset-md-2"
             >
-              Whatsapp Number
+              Whatsapp Number<br></br>व्हाट्सएप नंबर
             </label>
             <div class="col-md-6">
               <input
@@ -193,7 +193,7 @@ class Form extends Component {
         {count === 5 ? (
           <div class="form-group row mt-5">
             <label for="Name" className="col-md-2 col-form-label offset-md-2">
-              Name
+              Name<br></br>कृपया अपना पूरा नाम लिखें जैसा पैन कार्ड पर है
             </label>
             <div class="col-md-6">
               <input
@@ -218,21 +218,22 @@ class Form extends Component {
         {count === 6 ? (
           <div class="form-group row mt-5">
             <label for="fname" className="col-md-2 col-form-label offset-md-2">
-              Father's Name
+              Father's Name/Husband's Name<br></br>कृपया पिता / पति का पूरा नाम
+              लिखें जैसा पैन कार्ड पर है
             </label>
             <div class="col-md-6">
               <input
                 type="text"
                 className="form-control"
-                name="fathername"
+                name="fatherOrHusband"
                 id="fname"
-                placeholder="Enter Father's Name"
+                placeholder="Enter Father's/Husband's Name"
                 onChange={this.handleChange}
               />
-              {fathername && fathername.length < 3 ? (
+              {fatherOrHusband && fatherOrHusband.length < 3 ? (
                 <p class="error">Name must have 3 characters</p>
               ) : null}
-              {fathername && fathername.length >= 3 ? (
+              {fatherOrHusband && fatherOrHusband.length >= 3 ? (
                 <Button className="mt-5 mb-5" onClick={this.handleStart}>
                   OK
                 </Button>
@@ -243,7 +244,7 @@ class Form extends Component {
         {count === 7 ? (
           <div class="form-group row mt-5">
             <label for="pa" className="col-md-2 col-form-label offset-md-2">
-              Permanent Address
+              Permanent Address<br></br>स्थायी पता
             </label>
             <div class="col-md-6">
               <input
@@ -266,7 +267,7 @@ class Form extends Component {
           <div class="form-group row mt-5">
             <label for="ca" className="col-md-2 col-form-label offset-md-2">
               Current Address(Type same if permanent address is same as current
-              address)
+              address)<br></br>वर्तमान पता यदि स्थायी पता हो तो लिखें "Same"cc
             </label>
             <div class="col-md-6">
               <input
@@ -288,7 +289,7 @@ class Form extends Component {
         {count === 9 ? (
           <div class="form-group row mt-5">
             <label for="email" className="col-md-2 col-form-label offset-md-2">
-              Email
+              Email<br></br>ईमेल पता
             </label>
             <div class="col-md-6">
               <input
@@ -313,7 +314,7 @@ class Form extends Component {
         {count === 10 ? (
           <div class="form-group row mt-5">
             <label for="amount" className="col-md-2 col-form-label offset-md-2">
-              Loan Amount
+              Loan Amount<br></br>ऋण धन राशि
             </label>
             <div class="col-md-6">
               <select
@@ -338,7 +339,8 @@ class Form extends Component {
         {count === 11 ? (
           <div class="form-group row mt-5">
             <label for="period" className="col-md-2 col-form-label offset-md-2">
-              Loan Tenure
+              Loan Tenure (Processing Fee (प्रोसेसिंग शुल्क)300 ; Interest Rate
+              (ब्याज दर) 1.23%).<br></br>ऋण की अवधि
             </label>
             <div class="col-md-6">
               <select
