@@ -2,9 +2,10 @@ const http = require("http");
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-
+const MONGODB_URI =
+  "mongodb+srv://anshuman:Anshuman@2001@cluster0.suc40.mongodb.net/<dbname>?retryWrites=true&w=majority";
 mongoose
-  .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/Rku-intern", {
+  .connect(MONGODB_URI || "mongodb://localhost:27017/Rku-intern", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
