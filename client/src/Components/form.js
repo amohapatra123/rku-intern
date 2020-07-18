@@ -20,6 +20,7 @@ class Form extends Component {
     code: null,
     option: null,
     count: 1,
+    data: null,
   };
   handleclick = () => {
     const {
@@ -33,6 +34,8 @@ class Form extends Component {
       amount,
       period,
       code,
+      count,
+      data,
     } = this.state;
     const request = {
       name,
@@ -49,11 +52,14 @@ class Form extends Component {
     axios
       .post("/api/loan", { request })
       .then((res) => {
-        console.log(res.data);
+        this.setState({ data: res.data });
       })
       .catch((err) => {
         console.log(err);
       });
+    this.setState({
+      count: count + 1,
+    });
   };
   handleStart = () => {
     const { count } = this.state;
@@ -91,6 +97,7 @@ class Form extends Component {
       code,
       count,
       option,
+      data,
     } = this.state;
     return (
       <>
@@ -391,6 +398,7 @@ class Form extends Component {
             ) : null}
           </div>
         ) : null}
+        {count === 13 ? <h1>{data}!!!</h1> : null}
       </>
     );
   }
